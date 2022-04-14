@@ -7,7 +7,7 @@ app = Flask(__name__, template_folder='templates')
 model = pickle.load(open('model.pkl', 'rb'))
 
 
-@app.route("/")
+@app.route("/", methods=['GET'])
 def index():
     return render_template('index.html')
 
