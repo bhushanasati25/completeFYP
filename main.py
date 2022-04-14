@@ -2,7 +2,7 @@ import numpy as np
 from flask import Flask, redirect, render_template, request, url_for
 import pickle
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__, template_folder='Templates')
 
 model = pickle.load(open('model.pkl', 'rb'))
 
@@ -86,5 +86,7 @@ def predict():
 
         return "<h1>Person is healthy</h1>"
 
+if __name__ == "__main__":
+    app.run(debug=True)
 
-app.run(debug=True)
+
