@@ -7,17 +7,17 @@ app = Flask(__name__, template_folder='templates')
 model = pickle.load(open('model.pkl', 'rb'))
 
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/")
 def index():
     return render_template('index.html')
 
 
-@app.route("/about", methods=['GET', 'POST'])
+@app.route("/about")
 def about():
     return render_template('about.html')
 
 
-@app.route("/healthcheck", methods=['GET', 'POST'])
+@app.route("/healthcheck")
 def healthcheck():
     # if request.method == "POST":
     #     age = request.form["age"]
@@ -64,7 +64,7 @@ def result():
         return render_template('result.html')
 
 
-@app.route('/predict', methods=['GET', 'POST'])
+@app.route('/predict')
 def predict():
     # age = request.form['age']
     # weight = request.form['weight']
