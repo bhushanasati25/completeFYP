@@ -7,7 +7,7 @@ app = Flask(__name__, template_folder='templates')
 model = pickle.load(open('model.pkl', 'rb'))
 
 
-@app.route("/", methods=['GET'])
+@app.route("/")
 def index():
     return render_template('index.html')
 
@@ -87,4 +87,4 @@ def predict():
         return "<h1>Person is healthy</h1>"
 
 
-app.run(debug=True)
+app.run(debug=True, threaded=True, port=5000)
